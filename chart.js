@@ -44,6 +44,7 @@ function getData(){
 
 
 	SensorData = navigator.accelerometer.watchAcceleration(dataSuccess, dataFailure, dataOptions);
+	alert("Get Data Working");
 
 
 }
