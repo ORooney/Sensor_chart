@@ -15,7 +15,7 @@ $(document).on("pagecreate", "#chartPage", function () {
 	
 	getData();
 
-	
+
 	//setup chart
     chart = new CanvasJS.Chart("chartContainer",{
       	title :{
@@ -40,7 +40,7 @@ $(document).on("pagecreate", "#chartPage", function () {
 function getData(){
 
 
-	SensorData = navigator.accelerometer.watchAcceleration();
+	SensorData = navigator.accelerometer.watchAcceleration(dataSuccess, dataFailure, dataOptions);
 
 
 }
@@ -68,9 +68,6 @@ function dataSuccess(data){
 
 	//redraw the chart
 	  chart.render();		
-  }
-
-
 
 
 }
