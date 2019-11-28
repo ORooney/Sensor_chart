@@ -8,7 +8,6 @@ var yAc;
 var zAc;
 
 var updateInterval = 1000;
-
 accelerometerOptions.frequency = 1000;
 
 
@@ -58,6 +57,8 @@ function dataSuccess(data){
 	yAc = data.y;
 
 	zAc = data.z;
+
+	alert(data.x);
 
 
 	//add them to the data points to draw
