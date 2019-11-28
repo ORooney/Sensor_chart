@@ -7,6 +7,10 @@ var xAc;
 var yAc;
 var zAc;
 
+var updateInterval = 1000;
+
+accelerometerOptions.frequency = 1000;
+
 
 $(document).on("pagecreate", "#chartPage", function () {
 	
@@ -57,7 +61,7 @@ function dataSuccess(data){
 
 
 	//add them to the data points to draw
-	dps.push({x: xAc,y: yAc, z: zAc});
+	dps.push({x: xAc,y: yAc});
       	
 	//don't let the chart get too big 
 	//if there are more than 100 data points then start removing older data points
@@ -90,7 +94,6 @@ function dataOptions(){
 
 }
 
-
 function updateChart(random) {
       	
       	//set new random y values
@@ -114,3 +117,5 @@ function updateChart(random) {
 		//redraw the chart
       	chart.render();		
 	  }
+
+		setInterval(function(){getData()}, updateInterval);
