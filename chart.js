@@ -16,6 +16,8 @@ $(document).on("pagecreate", "#chartPage", function () {
 	//store start time in unixtime 
 	startTime = Date.now();
 	
+	alert("Working");
+
 	getData();
 
 
@@ -44,7 +46,6 @@ function getData(){
 
 
 	SensorData = navigator.accelerometer.watchAcceleration(dataSuccess, dataFailure, dataOptions);
-	alert("Get Data Working");
 
 
 }
